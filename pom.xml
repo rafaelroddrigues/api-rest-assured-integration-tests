@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>gs-rest-service</artifactId>
+    <artifactId>rest-assured-integration-tests</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -23,6 +23,8 @@
         <allure.maven.version>2.8</allure.maven.version>
         <maven.surefire.version>2.21.0</maven.surefire.version>
         <build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
+        <lombok.version>1.16.18</lombok.version>
+        <codehaus.janino.version>2.7.8</codehaus.janino.version>
     </properties>
 
     <dependencies>
@@ -40,7 +42,12 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
-    <!-- Test -->
+        <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+            <version>${codehaus.janino.version}</version>
+        </dependency>
+        <!-- Test -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -56,6 +63,11 @@
             <artifactId>allure-junit4</artifactId>
             <version>${allure.junit4.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 
@@ -101,6 +113,7 @@
                         </property>
                     </properties>
                     <systemProperties>
+                        <restLogAll>false</restLogAll>
                         <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
                     </systemProperties>
                 </configuration>
