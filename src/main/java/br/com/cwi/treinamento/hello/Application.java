@@ -1,4 +1,4 @@
-package hello;
+package br.com.cwi.treinamento.hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
