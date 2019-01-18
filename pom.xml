@@ -107,6 +107,7 @@
                         </property>
                     </properties>
                     <systemProperties>
+                        <restLogAll>false</restLogAll>
                         <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
                     </systemProperties>
                 </configuration>

@@ -1,12 +1,11 @@
 package it.baseTest;
 
+import it.util.Log;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.AfterClass;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
-import util.Log;
+import org.junit.runner.Description;;
 
 @Slf4j
 public class BaseTest {

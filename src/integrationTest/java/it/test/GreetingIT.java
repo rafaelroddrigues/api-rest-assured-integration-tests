@@ -1,11 +1,12 @@
 package it.test;
 
+import it.baseTest.BaseTest;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.is;
 
-public class GreetingIT {
+public class GreetingIT extends BaseTest {
 
     @Test
     public void deveSaudarUsuarioPadraoQuandoFeitoRequestCorreto() {
