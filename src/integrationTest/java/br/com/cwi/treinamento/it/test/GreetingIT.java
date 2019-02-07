@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GreetingIT extends BaseTest {
 
@@ -19,7 +20,8 @@ public class GreetingIT extends BaseTest {
                     get(baseUrl + "/api/Users");
 
         assertEquals(response.getStatusCode(), 200);
-        assertEquals(response.getBody().jsonPath().getList("ID").get(0).toString(), "1");
+        assertEquals(response.getBody().jsonPath().getList("ID").get(0), 1);
+        assertEquals(Integer.class, response.getBody().jsonPath().getList("UserName").get(0).getClass());
     }
 
     @Test
